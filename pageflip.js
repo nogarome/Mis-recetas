@@ -70,9 +70,29 @@
 	// Renderiza el paso de página 60 veces por segundo
 	setInterval( render, 1000 / 60 );
 	
-	document.addEventListener( "mousemove", mouseMoveHandler, false );
+	/* document.addEventListener( "mousemove", mouseMoveHandler, false );
 	document.addEventListener( "mousedown", mouseDownHandler, false );
-	document.addEventListener( "mouseup", mouseUpHandler, false );
+	document.addEventListener( "mouseup", mouseUpHandler, false ); */
+
+	if (window.PointerEvent) {
+		window.addEventListener('pointerdown', mouseDownHandler, false);
+	  
+		window.addEventListener('pointermove', mouseMoveHandler, false);
+	  
+		window.addEventListener('pointerup', mouseUpHandler, false);  
+	  } else {
+		window.addEventListener('touchdown', mouseDownHandler, false);
+	  
+		window.addEventListener('touchmove', mouseMoveHandler, false);
+	  
+		window.addEventListener('touchup', mouseUpHandler, false);  
+		
+		window.addEventListener('mousedown', mouseDownHandler, false);
+	  
+		window.addEventListener('mousemove', mouseMoveHandler, false);
+	  
+		window.addEventListener('mouseup', mouseUpHandler, false);  
+	  }
 	
 	function mouseMoveHandler( event ) {
 		// Offset mouse position so that the top of the book spine is 0,0

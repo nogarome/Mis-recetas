@@ -34,7 +34,7 @@ body {
   box-shadow: 0px 20px 20px -5px rgba(0, 0, 0, 0.4);
 }
 #pages section {
-  background: url("img/papel.png") no-repeat;
+  background: url(img/papel.png) no-repeat;
   display: block;
   width: 400px;
   height: 614px;
